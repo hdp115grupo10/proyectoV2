@@ -8,13 +8,6 @@ class Medicamento(models.Model):
     nombre_medicamento=models.CharField(max_length=50)
     concentraciones=models.ManyToManyField('Concentracion', through='Med_Concentracion')
     def __str__(self):
-        return self.nombre_medicamento
-    def get_precio2013(self):
-        return self.precio2013
-    def get_precio2014(self):
-        return self.precio2014
-    def get_precio2013(self):
-        return self.precio2014
 
 @python_2_unicode_compatible
 class Farmacia(models.Model):
