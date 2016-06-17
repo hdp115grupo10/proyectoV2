@@ -27,11 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}
 
 # Application definition
 
 INSTALLED_APPS = [
-    'chartjs',
+    'chartit',
+    'django_extensions',
     'variacionMedicamentos.apps.VariacionmedicamentosConfig',
     'django.contrib.admin',
     'django.contrib.auth',
