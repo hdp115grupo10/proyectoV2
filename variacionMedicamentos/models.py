@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 from django.utils.encoding import python_2_unicode_compatible
 
 # Create your models here.
@@ -8,6 +9,7 @@ class Medicamento(models.Model):
     nombre_medicamento=models.CharField(max_length=50)
     concentraciones=models.ManyToManyField('Concentracion', through='Med_Concentracion')
     def __str__(self):
+        return self.nombre_medicamento, self.codigo_medicamento, self.concentraciones
 
 @python_2_unicode_compatible
 class Farmacia(models.Model):
@@ -42,3 +44,14 @@ class Precio_anios(models.Model):
 class SeVende(models.Model):
     medicamento=models.ForeignKey(Med_Concentracion, on_delete=models.CASCADE)
     farmacia=models.ForeignKey(Farmacia, on_delete=models.CASCADE)
+
+class MedicamentosForm(ModelForm):
+    class Meta:
+        model = Medicamento
+        fields = ['codigo_medicamento', 'nombre_medicamento', 'concentraciones']
+
+class ConcentracionesForm(ModelForm):
+    class Meta:
+        model = Med_Concentracion
+        fields = ['medicamento', 'concentracion']
+

@@ -5,5 +5,6 @@ from django.contrib.auth.decorators import login_required
 app_name='variacionMedicamentos'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^variacionprecios/$', views.medicamentos, name='medicamentos'),
+    url(r'^variacionprecios/$', views.consultaMedicamentos, name='medicamentos'),
+    url(r'^add_med/$', views.add_medicamento, name='add_medicamento'), 
 ]
