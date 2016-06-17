@@ -17,7 +17,6 @@ def index(request):
 
 def consultaMedicamentos(request):
     medicamentos=Medicamento.objects.all()
-    print medicamentos
     return render_to_response( 'medicamentos.html', {'medicamentos': medicamentos})
 
 def add_medicamento(request):
@@ -32,5 +31,3 @@ def add_medicamento(request):
 	else:
 		form = MedicamentosForm()
 	return render_to_response('add_medicamento.html', {'form': form}, context)
-
- 
