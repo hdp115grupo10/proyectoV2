@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 {% load staticfiles %}
 <!--
@@ -14,9 +15,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="{% static 'assets/css/main.css'%}" />
-		<script src="https://code.highcharts.com"></script>
-    <script src ="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-    <script type ="text/javascript" src ="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href=" /static/assets/DataTables/datatables.css"/>
+		<script type="text/javascript" src="/static/assets/DataTables/datatables.js"></script>
+		<script>
+		$(document).ready(function(){
+     $('#tablaMedicamentos').dataTable();
+	  });
+		</script>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -58,26 +63,24 @@
 				<!-- Main -->
 					<div id="main">
 					<h2><center>Lista de medicamentos</center> </h2>
-					<table>
+					<table id="tablaMedicamentos" class="display">
 						<thead>
 							<tr>
 								<th>Codigo</th>
 								<th>Nombre</th>
-								<th>2013</th>
-								<th>2014</th>
-								<th>2015</th>
+								<th>Concentracion</th>
+								<th>Anio</th>
+								<th>Precio</th>
 							</tr>
 						</thead>
 						<tbody>
-
-
-							{% for med in medicamentos %}
+							{% for x, y, z, w, c in medicamentos %}
 							<tr>
-								<td>{{med.codigo_medicamento}}</td>
-								<td>{{med.nombre_medicamento}}</td>
-								<td>{{med.precio2013}}</td>
-								<td>{{med.precio2014}}</td>
-								<td>{{med.precio2015}}</td>
+								<td>{{x}}</td>
+								<td>{{y}}</td>
+								<td>{{z}}</td>
+								<td>{{w}}</td>
+								<td>$ {{c}}</td>
 							</tr>
 							{% endfor %}
 						</tbody>
@@ -127,6 +130,12 @@
 				<script src="{% static 'assets/js/jquery.min.js'%}"></script>
 				<script src="{% static 'assets/js/skel.min.js'%}"></script>
 				<script src="{% static 'assets/js/util.js'%}"></script>
+				<script type="text/javascript" src="/static/assets/DataTables/datatables.js"></script>
+				<script>
+				$(document).ready(function(){
+				 $('#tablaMedicamentos').dataTable();
+				});
+				</script>
 				<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 				<script src="{% static 'assets/js/main.js'%}"></script>
 
