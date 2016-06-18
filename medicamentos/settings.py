@@ -35,8 +35,6 @@ GRAPH_MODELS = {
 # Application definition
 
 INSTALLED_APPS = [
-    'chartit',
-    'django_extensions',
     'variacionMedicamentos.apps.VariacionmedicamentosConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -84,7 +82,7 @@ WSGI_APPLICATION = 'medicamentos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'medicamentosBD',
+        'NAME': 'medicamentos',
 	    'USER': 'medHDP',
         'PASSWORD': 'medHDP2016',
         'HOST': 'localhost',
