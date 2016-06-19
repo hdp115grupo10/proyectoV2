@@ -15,13 +15,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="{% static 'assets/css/main.css'%}" />
-		<link rel="stylesheet" type="text/css" href=" /static/assets/DataTables/datatables.css"/>
-		<script type="text/javascript" src="/static/assets/DataTables/datatables.js"></script>
-		<script>
-		$(document).ready(function(){
-     $('#tablaMedicamentos').dataTable();
-	  });
-		</script>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -49,16 +42,16 @@
 					</header>
 
 				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="/">Inicio</a></li>
-
-							<li><a href="">formulas</a></li>
-							<li><a href="#">Graficos</a></li>
-							<li><a href="http://127.0.0.1:8000/admin/">Iniciar Sesion</a></li>
-						</ul>
-					</nav>
+				<nav id="menu">
+					<h2>Menu</h2>
+					<ul>
+						<li><a href="/meds/variacionprecios/">Listado precios por concetracion y anio</a></li>
+						<li><a href="/meds/preciofarmacias/">Listado precios por farmacia</a></li>
+						<li><a href="">Formula</a></li>
+						<li><a href="#">Graficos</a></li>
+						<li><a href="/admin/">Iniciar Sesion</a></li>
+					</ul>
+				</nav>
 
 				<!-- Main -->
 					<div id="main">
@@ -131,13 +124,7 @@
 			<!-- Scripts -->
 				<script src="{% static 'assets/js/jquery.min.js'%}"></script>
 				<script src="{% static 'assets/js/skel.min.js'%}"></script>
-				<script src="{% static 'assets/js/util.js'%}"></script>
-				<script type="text/javascript" src="/static/assets/DataTables/datatables.js"></script>
-				<script>
-				$(document).ready(function(){
-				 $('#tablaMedicamentos').dataTable();
-				});
-				</script>
+				<script src="{% static 'assets/js/util.js'%}"></script>				
 				<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 				<script src="{% static 'assets/js/main.js'%}"></script>
 

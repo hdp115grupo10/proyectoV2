@@ -47,11 +47,11 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="/meds/variacionprecios/">Listado</a></li>
-
+							<li><a href="/meds/variacionprecios/">Listado precios por concetracion y anio</a></li>
+							<li><a href="/meds/preciofarmacias/">Listado precios por farmacia</a></li>
 							<li><a href="">Formula</a></li>
 							<li><a href="#">Graficos</a></li>
-							<li><a href="http://127.0.0.1:8000/admin/">Iniciar Sesion</a></li>
+							<li><a href="/admin/">Iniciar Sesion</a></li>
 						</ul>
 					</nav>
 
@@ -70,9 +70,9 @@
 								<img src="{% static 'images/med1.jpg'%}" alt="" />
 									</span>
 									<a href="/meds/variacionprecios/">
-										<h2>Lista de medicamentos</h2>
+										<h2>Lista de medicamentos por anio y concentracion</h2>
 										<div class="content">
-											<p>Listado de medicamentos de venta libre.</p>
+											<p>Listado de medicamentos segun su anio y concentracion</p>
 										</div>
 									</a>
 								</article>
@@ -80,10 +80,10 @@
 									<span class="image">
 										<img src="{% static 'images/med2.jpg'%}" alt="" />
 									</span>
-									<a href="">
-										<h2>Formulas</h2>
+									<a href="/meds/preciofarmacias">
+										<h2>Listado Medicamentos por farmacias</h2>
 										<div class="content">
-											<p>Formulas para calcular la varianza</p>
+											<p>Muestra el listado de medicamentos y su precio en farmcias</p>
 										</div>
 									</a>
 								</article>
@@ -91,10 +91,10 @@
 									<span class="image">
 										<img src="{% static 'images/pic03.jpg'%}" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Feugiat</h2>
+									<a href="admin/variacionMedicamentos/">
+										<h2>Ingr/esar Datos</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>Ingresar Datos</p>
 										</div>
 									</a>
 								</article>
@@ -246,7 +246,7 @@
 			<script src="{% static 'assets/js/jquery.min.js'%}"></script>
 			<script src="{% static 'assets/js/skel.min.js'%}"></script>
 			<script src="{% static 'assets/js/util.js'%}"></script>
-			
+
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="{% static 'assets/js/main.js'%}"></script>
 
