@@ -69,18 +69,20 @@
 								<th>Codigo</th>
 								<th>Nombre</th>
 								<th>Concentracion</th>
-								<th>Anio</th>
-								<th>Precio</th>
+								<th>Precio 2013</th>
+								<th>Precio 2014</th>
+								<th>Precio 2015</th>
 							</tr>
 						</thead>
 						<tbody>
-							{% for x, y, z, w, c in medicamentos %}
+							{% for x, y, z, w, c, h in medicamentos %}
 							<tr>
 								<td>{{x}}</td>
 								<td>{{y}}</td>
 								<td>{{z}}</td>
-								<td>{{w}}</td>
+								<td>$ {{w}}</td>
 								<td>$ {{c}}</td>
+								<td>$ {{h}}</td>
 							</tr>
 							{% endfor %}
 						</tbody>

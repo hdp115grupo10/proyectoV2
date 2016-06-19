@@ -1,27 +1,127 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+{% load staticfiles %}
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-    <head>
-        <title>Rango</title>
-    </head>
 
-    <body>
-        <h1>Add a Category</h1>
+<!-- Mirrored from html5up.net/uploads/demos/phantom/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 May 2016 02:28:05 GMT -->
+<head>
+		<title>Medicamentos El Salvador</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'assets/css/main.css'%}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		{% load staticfiles %}
+	</head>
+	<body>
+		{% load staticfiles %}
 
-        <form id="category_form" method="post" action="/rango/add_category/">
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-            {% csrf_token %}
-            {% for hidden in form.hidden_fields %}
-                {{ hidden }}
-            {% endfor %}
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
 
-            {% for field in form.visible_fields %}
-                {{ field.errors }}
-                {{ field.help_text }}
-                {{ field }}
-            {% endfor %}
+							<!-- Logo -->
+								<a href="/" class="logo">
+									<span class="symbol"><img src="{% static 'images/logo.svg'%}" alt="" /></span><span class="title">GRUPO 10</span>
+								</a>
 
-            <input type="submit" name="submit" value="Create Category" />
-        </form>
-    </body>
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
 
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="/meds/variacionprecios/">Listado</a></li>
+
+							<li><a href="">Formula</a></li>
+							<li><a href="#">Graficos</a></li>
+							<li><a href="http://127.0.0.1:8000/admin/">Iniciar Sesion</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Elements</h1>
+							<!-- Form -->
+								<section>
+									<h2>Form</h2>
+                          <form method="post" action="">{% csrf_token %}
+                            {{ formset.management_form }}
+    {% for form in formset %}
+        {{ form }}
+    {% endfor %}
+                              <button type='submit'>Save</button>
+                            </form>
+								</section>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="field half first">
+										<input type="text" name="name" id="name" placeholder="Name" />
+									</div>
+									<div class="field half">
+										<input type="email" name="email" id="email" placeholder="Email" />
+									</div>
+									<div class="field">
+										<textarea name="message" id="message" placeholder="Message"></textarea>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="special" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net/">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com/">Unsplash</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+
+<!-- Mirrored from html5up.net/uploads/demos/phantom/elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 May 2016 02:28:37 GMT -->
 </html>

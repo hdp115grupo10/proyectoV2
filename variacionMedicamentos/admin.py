@@ -13,31 +13,16 @@ class ConcentracionesAdmin(admin.ModelAdmin):
 
 
 class MedAdmin(admin.ModelAdmin):
+    exclude = ('concentraciones',)
+
     inlines = [
         Med_ConcenInline,
     ]
-    exclude = ('concentraciones',)
     model = Medicamento
 
 
-class Med_Con_AnioInLine(admin.TabularInline):
-    model = Anios.medicamentos.through
-
-
-class Med_ConcentracionAdmin(admin.ModelAdmin):
-    inlines = [
-        Med_Con_AnioInLine
-    ]
-class AnioAdmin(admin.ModelAdmin):
-    inlines = [
-        Med_Con_AnioInLine
-    ]
-
-
-
 admin.site.register(Medicamento, MedAdmin)
-admin.site.register(Med_Concentracion, Med_ConcentracionAdmin)
-admin.site.register(Concentracion)
+admin.site.register(Med_Concentracion)
+admin.site.register(Concentracion, ConcentracionesAdmin)
 admin.site.register(Farmacia)
-admin.site.register(Anios)
 # Register your models here.
