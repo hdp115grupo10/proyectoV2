@@ -7,7 +7,6 @@ from django.utils.encoding import python_2_unicode_compatible
 class Medicamento(models.Model):
     codigo_medicamento=models.CharField(max_length=7, primary_key=True)
     nombre_medicamento=models.CharField(max_length=50)
-    concentraciones=models.ManyToManyField('Concentracion', through='Med_Concentracion')
     def __str__(self):
         return "{0}, {1}".format(self.nombre_medicamento, self.codigo_medicamento)
 
@@ -15,7 +14,6 @@ class Medicamento(models.Model):
 class Farmacia(models.Model):
     nombre_farmacia=models.CharField(max_length=30)
     descuento=models.FloatField()
-    medicamentos=models.ManyToManyField('Med_Concentracion', through='SeVende')
     def __str__(self):
         return self.nombre_farmacia
 

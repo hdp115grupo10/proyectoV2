@@ -64,9 +64,11 @@
 									<h2>Form</h2>
                           <form method="post" action="">{% csrf_token %}
                             {{ formset.management_form }}
-    {% for form in formset %}
-        {{ form }}
-    {% endfor %}
+  {% for form in formset %}
+      {% for field in form %}
+          {{ field.label_tag }} {{ field }}
+      {% endfor %}
+  {% endfor %}
                               <button type='submit'>Save</button>
                             </form>
 								</section>
