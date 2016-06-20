@@ -2,6 +2,8 @@ from django.conf.urls import url
 from . import views
 from django.contrib.auth.decorators import login_required
 
+# Asignacion de las url de la aplicacion
+
 app_name = 'variacionMedicamentos'
 urlpatterns = [
     url(r'^$', views.index, name='index'),

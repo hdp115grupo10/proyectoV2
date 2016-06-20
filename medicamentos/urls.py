@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from variacionMedicamentos import views
 from authent import views as autenth_views
-
+# Definicion de las URL de nuestra aplicacion
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^meds/', include('variacionMedicamentos.urls')),
