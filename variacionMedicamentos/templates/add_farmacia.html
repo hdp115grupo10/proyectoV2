@@ -9,7 +9,7 @@
 
 <!-- Mirrored from html5up.net/uploads/demos/phantom/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 May 2016 02:28:05 GMT -->
 <head>
-		<title>Gestión de Medicamentos</title>
+		<title>Gestión de Farmacias</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -28,7 +28,7 @@
 					<header id="header">
 						<div class="inner">
 
-							<!-- Logo -->
+              <!-- Logo -->
 								<a href="/" class="logo">
 									<span class="symbol"><img src="{% static 'images/logo.svg'%}" alt="" /></span><span class="title">GRUPO 10</span>
 								</a>
@@ -55,10 +55,10 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Gestión de Medicamentos</h1>
+							<h1>Gestión de Farmacias</h1>
 							<!-- Form -->
 								<section>
-									<h2>Edite, Agregue y Borre un medicamento</h2>
+									<h2>Edite, Agregue y Borre un medicamento en una Farmacia</h2>
                           <form method="post" action="">{% csrf_token %}
                             {{ formset.management_form }}
   {% for form in formset %}
@@ -66,20 +66,20 @@
           {{ field.label_tag }} {{ field }}
       {% endfor %}
   {% endfor %}
-                              <button type='submit'>Save</button>
+                              <button type='submit'>Guardar</button>
                             </form>
 								</section>
 						</div>
 					</div>
 
 				<!-- Footer -->
-				<footer id="footer">
-					<div class="inner">
-						<ul class="copyright">
-							<li>&copy; HDP115 Grupo10. All rights reserved</li><li>Design: <a href="http://html5up.net/">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com/">Unsplash</a></li>
-						</ul>
-					</div>
-				</footer>
+        <footer id="footer">
+          <div class="inner">
+            <ul class="copyright">
+              <li>&copy; HDP115 Grupo10. All rights reserved</li><li>Design: <a href="http://html5up.net/">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com/">Unsplash</a></li>
+            </ul>
+          </div>
+        </footer>
 
 
 			</div>

@@ -36,6 +36,7 @@ GRAPH_MODELS = {
 
 INSTALLED_APPS = [
     'variacionMedicamentos.apps.VariacionmedicamentosConfig',
+    'authent.apps.AuthentConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,6 +57,8 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'medicamentos.urls'
+
+LOGIN_URL = '/login/'
 
 TEMPLATES = [
     {

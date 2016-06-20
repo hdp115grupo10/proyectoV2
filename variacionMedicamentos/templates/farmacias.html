@@ -10,7 +10,7 @@
 
 <!-- Mirrored from html5up.net/uploads/demos/phantom/generic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 May 2016 02:28:33 GMT -->
 <head>
-		<title>Medicamentos de venta libre</title>
+		<title>Listado de Medicamentos por Far</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -34,32 +34,29 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="index-2.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">GRUPO 10</span>
+								<a href="/" class="logo">
+									<span class="symbol"><img src="{% static 'images/logo.svg'%}" alt="" /></span><span class="title">GRUPO 10</span>
 								</a>
 
 							<!-- Nav -->
 								<nav>
 									<ul>
-										<li><a href="#menu">Menu</a></li>
+										<li><a href="#menu">Menú</a></li>
 									</ul>
 								</nav>
 
 						</div>
 					</header>
 
-				<!-- Menu -->
 					<nav id="menu">
-						<h2>Menu</h2>
+						<h2>Menú</h2>
 						<ul>
-							<li><a href="/">Inicio</a></li>
-
-							<li><a href="">formulas</a></li>
-							<li><a href="#">Graficos</a></li>
-							<li><a href="http://127.0.0.1:8000/admin/">Iniciar Sesion</a></li>
+							<li><a href="/meds/variacionprecios/">Listado precios por concetración y año</a></li>
+							<li><a href="/meds/preciofarmacias/">Listado precios por farmacia</a></li>
+							<li><a href="/meds/add_med/">Añadir Medicamentos (Administrador)(beta)</a></li>
+							<li><a href="/login/">Iniciar Sesión</a></li>
 						</ul>
 					</nav>
-
 				<!-- Main -->
 					<div id="main">
 					<h2><center>Lista de medicamentos</center> </h2>
@@ -121,7 +118,7 @@
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net/">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com/">Unsplash</a></li>
+								<li>&copy; HDP115 Grupo10. All rights reserved</li><li>Design: <a href="http://html5up.net/">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com/">Unsplash</a></li>
 							</ul>
 						</div>
 					</footer>
