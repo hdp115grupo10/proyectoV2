@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^variacionprecios/$', views.consultaMedicamentos, name='medicamentos'),
     url(r'^add_med/$', views.add_medicamento, name='add_medicamento'),
     url(r'^preciofarmacias/$', views.consultarFarmacia, name='farmacias'),
+    url(r'^add_farmacia/$', views.add_farmacia, name='add_farmacia'),
 ]

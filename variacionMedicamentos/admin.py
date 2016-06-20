@@ -19,8 +19,13 @@ class Med_ConAdmin(admin.ModelAdmin):
     model = Med_Concentracion
     list_display = ('medicamento', 'concentracion', 'precio13', 'precio14', 'precio15')
 
+class SeVendeAdmin(admin.ModelAdmin):
+    model = SeVende
+    list_display = ('medicamento', 'farmacia')
+
 admin.site.register(Medicamento, MedAdmin)
 admin.site.register(Med_Concentracion)
 admin.site.register(Concentracion, ConcentracionesAdmin)
 admin.site.register(Farmacia, FarmaciaAdmin)
+admin.site.register(SeVende, SeVendeAdmin)
 # Register your models here.

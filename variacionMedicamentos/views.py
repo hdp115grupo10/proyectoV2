@@ -18,10 +18,23 @@ def homepage(request):
 
 
 def index(request):
-    reldata = csv.reader(open('/root/Downloads/SOLO-MEDS.csv'),delimiter=';')
+    reldata = csv.reader(open('Downloads/SOLO-MEDS.csv'), delimiter=';')
     for row in reldata:
         q = Medicamento(codigo_medicamento=row[0],nombre_medicamento=row[1])
         q.save()
+    concen = csv.reader(open('CONCETRACIONES.csv'), delimiter=';')
+    for row in concen:
+        q = Concentracion(id=row[0], valor=row[1])
+        q.save()
+    medcon = csv.reader(open('Datos-Medicamentos.csv'), delimiter=';')
+    for row in medcon:
+        med = Medicamento.objects.get(codigo_medicamento=row[1])
+        con = Concentracion.objects.get(id=row[2])
+        p13 = row[3]
+        p14 = row[4]
+        p15 = row[5]
+        f = Med_Concentracion(id=row[0], concentracion_id=con.id, medicamento_id=med.codigo_medicamento, precio13=p13, precio14=p14, precio15=p15)
+        f.save()
     return render(request, 'index.html')
 
 
@@ -39,13 +52,26 @@ def consultarFarmacia(request):
     return render_to_response('farmacias.html', {'medicamentos': row})
 
 
+@login_required
 def add_medicamento(request):
     MedicamentoFormSet = modelformset_factory(Med_Concentracion, fields=( 'medicamento', 'concentracion', 'precio13', 'precio14', 'precio15'), can_delete=True)
     if request.method == 'POST':
         formset = MedicamentoFormSet(request.POST, request.FILES)
         if formset.is_valid():
             formset.save()
-            return HttpResponseRedirect("/meds/variacionprecios")
+            return HttpResponseRedirect("/meds/farmacias.html")
     else:
         formset = MedicamentoFormSet()
-    return render(request, 'add_medicamento.html', {'formset': formset})
+    return render(request, 'add_farmacia.html', {'formset': formset})
+
+@login_required
+def add_farmacia(request):
+    FarmaciaFormSet = modelformset_factory(SeVende, fields=('medicamento', 'farmacia'), can_delete=True)
+    if request.method == 'POST':
+        formset = FarmaciaFormSet(request.POST, request.FILES)
+        if formset.is_valid():
+            formset.save()
+            return HttpResponseRedirect("/meds/variacionprecios")
+    else:
+        formset = FarmaciaFormSet()
+    return render(request, 'add_farmacia.html', {'formset': formset})

@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from variacionMedicamentos import views
+from authent import views as autenth_views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^meds/', include('variacionMedicamentos.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^login/', autenth_views.login_user),
+    url(r'^logout/', autenth_views.logout_user),
 ]
