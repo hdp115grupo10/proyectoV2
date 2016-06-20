@@ -2,7 +2,7 @@ from django.db import models
 from django.forms import ModelForm
 from django.utils.encoding import python_2_unicode_compatible
 
-# Create your models here.
+# Creacion de Modelos.
 @python_2_unicode_compatible
 class Medicamento(models.Model):
     codigo_medicamento=models.CharField(max_length=7, primary_key=True)

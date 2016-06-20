@@ -58,6 +58,8 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'medicamentos.urls'
 
+# Definicion del url de login
+
 LOGIN_URL = '/login/'
 
 TEMPLATES = [
