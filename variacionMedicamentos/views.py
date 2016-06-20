@@ -18,15 +18,15 @@ def homepage(request):
 
 
 def index(request):
-    reldata = csv.reader(open('Downloads/SOLO-MEDS.csv'), delimiter=';')
+    reldata = csv.reader(open('/root/Downloads/SOLO-MEDS.csv'), delimiter=';')
     for row in reldata:
         q = Medicamento(codigo_medicamento=row[0],nombre_medicamento=row[1])
         q.save()
-    concen = csv.reader(open('CONCETRACIONES.csv'), delimiter=';')
+    concen = csv.reader(open('/root/Downloads/CONCETRACIONES.csv'), delimiter=';')
     for row in concen:
         q = Concentracion(id=row[0], valor=row[1])
         q.save()
-    medcon = csv.reader(open('Datos-Medicamentos.csv'), delimiter=';')
+    medcon = csv.reader(open('/root/Downloads/Datos-Medicamentos.csv'), delimiter=';')
     for row in medcon:
         med = Medicamento.objects.get(codigo_medicamento=row[1])
         con = Concentracion.objects.get(id=row[2])
