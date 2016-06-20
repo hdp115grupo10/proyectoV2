@@ -47,9 +47,7 @@
 							<li><a href="/meds/variacionprecios/">Listado precios por concetración y año</a></li>
 							<li><a href="/meds/preciofarmacias/">Listado precios por farmacia</a></li>
 							<li><a href="/meds/add_med/">Añadir Medicamentos (Administrador)(beta)</a></li>
-								<li><a href="/meds/add_farmacia/">Añadir Farmacia (Administrador)(beta)</a></li>
 							<li><a href="/login/">Iniciar Sesión</a></li>
-							<li><a href="/admin/">Administración</a></li>
 						</ul>
 					</nav>
 
@@ -80,6 +78,23 @@
 							{% endfor %}
 						</tbody>
 					</table>
+					<div id="container"></div>
+<div id="sliders">
+    <table>
+        <tr>
+        	<td>Alpha Angle</td>
+        	<td><input id="alpha" type="range" min="0" max="45" value="15"/> <span id="alpha-value" class="value"></span></td>
+        </tr>
+        <tr>
+        	<td>Beta Angle</td>
+        	<td><input id="beta" type="range" min="-45" max="45" value="15"/> <span id="beta-value" class="value"></span></td>
+        </tr>
+        <tr>
+        	<td>Depth</td>
+        	<td><input id="depth" type="range" min="20" max="100" value="50"/> <span id="depth-value" class="value"></span></td>
+        </tr>
+    </table>
+</div>
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
@@ -94,7 +109,72 @@
 			<!-- Scripts -->
 				<script src="{% static 'assets/js/jquery.min.js'%}"></script>
 				<script src="{% static 'assets/js/skel.min.js'%}"></script>
+				<script src="{% static 'assets/js/jquery.js'%}"></script>
 				<script src="{% static 'assets/js/util.js'%}"></script>
+				<script src="{% static 'assets/js/highcharts.js'%}"></script>
+				<script>$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'M03BA03	Metocarbamol 500mg (Medicamento de referencia) '
+        },
+        subtitle: {
+            text: 'Variacion del precio durante los siguientes años'
+        },
+        xAxis: {
+            categories: ['2013','2014','2015'],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Precio en dolares',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' Dolares'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            verticalAlign: 'top',
+            x: 40,
+            y: 0,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Farmacia San Nicolas',
+            data: [0.24, 2.34, 2.34]
+        }, {
+            name: 'Farmacia Farma Value',
+            data: [0.23, 2.21, 2.21]
+        }, {
+            name: 'Farmacia Camila',
+            data: [0.26, 2.47, 2.47]
+        }]
+    });
+});</script>
 				<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 				<script src="{% static 'assets/js/main.js'%}"></script>
 

@@ -88,3 +88,6 @@ def add_farmacia(request):  # Se define la vista de agregar farmacia (BETA)
     else:
         formset = FarmaciaFormSet()
     return render(request, 'add_farmacia.html', {'formset': formset})
+
+def formula(request):  # Se define la vista pata ver la formula
+    return render(request, 'formula.html')
