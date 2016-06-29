@@ -9,7 +9,7 @@
 
 <!-- Mirrored from html5up.net/uploads/demos/phantom/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 May 2016 02:28:05 GMT -->
 <head>
-		<title>Inicio de Sesión</title>
+		<title>Medicamentos El Salvador</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -43,69 +43,72 @@
 						</div>
 					</header>
 
+				<!-- Menu -->
 					<nav id="menu">
 						<h2>Menú</h2>
 						<ul>
 							<li><a href="/meds/variacionprecios/">Listado precios por concetración y año</a></li>
 							<li><a href="/meds/preciofarmacias/">Listado precios por farmacia</a></li>
 							<li><a href="/meds/add_med/">Añadir Medicamentos (Administrador)(beta)</a></li>
+								<li><a href="/meds/add_farmacia/">Añadir Farmacia (Administrador)(beta)</a></li>
 							<li><a href="/login/">Iniciar Sesión</a></li>
+							<li><a href="/admin/">Administración</a></li>
 						</ul>
 					</nav>
 
-				<!-- Main -->
 					<div id="main">
 						<div class="inner">
 							<h1>Iniciar Sesión</h1>
-							<!-- Form -->
-								<section>
-									<h1 align="center">	{{ state }}</h1>
-									<h1 align="center">{% if next %}</h1>
-									</div>
-									<form action="/login/?next={{next}}" method="post" >
-											{%else%}
-											<form action="/login/" method="post" >
-											{% endif %}
-											{% csrf_token %}
 
-											<div class="body clearfix">
+<h1 align="center">	{{ state }}</h1>
+	<section>
+<h1 align="center">{% if next %}</h1>
+<form action="/login/?next={{next}}" method="post" >
+		{%else%}
 
-												<p>
-													Usuario:
-												</p>
-											<input type="text" name="username" value="{{ username}}" /><br />
+		<form action="/login/" method="post" >
+		{% endif %}
+		{% csrf_token %}
 
-									        <div>
-									          <p>Password:</p>
-									        </div>
+		<div class="body clearfix">
 
-											<input align="middle" type="password" name="password" value="" /><br />
+			<p>
+				Usuario:
+			</p>
+		<input type="text" name="username" value="{{ username}}" /><br />
 
-											<input  align="middle" type="submit" value="Log In" />
-									         </div>
-									          </div>
-									</form>
+				<div>
+					<p>Password:</p>
+				</div>
 
-				<!-- Footer -->
-				<footer id="footer">
-					<div class="inner">
-						<ul class="copyright">
-							<li>&copy; HDP115 Grupo10. All rights reserved</li><li>Design: <a href="http://html5up.net/">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com/">Unsplash</a></li>
-						</ul>
-					</div>
-				</footer>
+		<input align="middle" type="password" name="password" value="" /><br />
 
+		<input  align="middle" type="submit" value="Log In" />
+				 </div>
+</form>
 
-			</div>
+	</section>
+</div>
+</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+				<li>&copy; HDP115 Grupo10. All rights reserved</li><li>Design: <a href="http://html5up.net/">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com/">Unsplash</a></li>
+			</ul>
+		</div>
+	</footer>
 
-	</body>
+</div>
 
-<!-- Mirrored from html5up.net/uploads/demos/phantom/elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 May 2016 02:28:37 GMT -->
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js'%}"></script>
+<script src="{% static 'assets/js/skel.min.js'%}"></script>
+<script src="{% static 'assets/js/util.js'%}"></script>
+
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="{% static 'assets/js/main.js'%}"></script>
+
+</body>
+
 </html>

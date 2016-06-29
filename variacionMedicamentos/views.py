@@ -84,7 +84,7 @@ def add_farmacia(request):  # Se define la vista de agregar farmacia (BETA)
         formset = FarmaciaFormSet(request.POST, request.FILES) # se cargan los datos al formset
         if formset.is_valid():  # Si es valido se guarda y nos redirije a la pagina de los farmacias
             formset.save()
-            return HttpResponseRedirect("/meds/farmacias")
+            return HttpResponseRedirect("/meds/preciofarmacias")
     else:
         formset = FarmaciaFormSet()
     return render(request, 'add_farmacia.html', {'formset': formset})
