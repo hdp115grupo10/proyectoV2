@@ -9,7 +9,7 @@
 
 <!-- Mirrored from html5up.net/uploads/demos/phantom/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 May 2016 02:28:05 GMT -->
 <head>
-		<title>Gestión de Medicamentos</title>
+		<title>Medicamentos El Salvador</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -43,6 +43,7 @@
 						</div>
 					</header>
 
+				<!-- Menu -->
 					<nav id="menu">
 						<h2>Menú</h2>
 						<ul>
@@ -54,46 +55,46 @@
 							<li><a href="/admin/">Administración</a></li>
 						</ul>
 					</nav>
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>Gestión de Medicamentos</h1>
-							<!-- Form -->
-								<section>
-									<h2>Edite, Agregue y Borre un medicamento</h2>
-                          <form method="post" action="">{% csrf_token %}
-                            {{ formset.management_form }}
-  {% for form in formset %}
-      {% for field in form %}
-          {{ field.label_tag }} {{ field }}
-      {% endfor %}
-  {% endfor %}
-                              <button type='submit'>Save</button>
-                            </form>
-								</section>
-						</div>
-					</div>
 
-				<!-- Footer -->
-				<footer id="footer">
-					<div class="inner">
-						<ul class="copyright">
-							<li>&copy; HDP115 Grupo10. All rights reserved</li><li>Design: <a href="http://html5up.net/">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com/">Unsplash</a></li>
-						</ul>
-					</div>
-				</footer>
+<div id="main">
+	<div class="inner">
+		<h1>Gestión de Medicamentos</h1>
+		<!-- Form -->
 
+				<h2>Edite, Agregue y Borre un medicamento</h2>
+<section>
+								<form method="post" action="">{% csrf_token %}
 
-			</div>
+									{{ formset.management_form }}
+{% for form in formset %}
+{% for field in form %}
+{{ field.label_tag }} {{ field }}
+{% endfor %}
+{% endfor %}
+										<button type='submit'>Save</button>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+									</form>
+							</section>
+	</div>
+</div>
+<footer id="footer">
+	<div class="inner">
+		<ul class="copyright">
+			<li>&copy; HDP115 Grupo10. All rights reserved</li><li>Design: <a href="http://html5up.net/">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com/">Unsplash</a></li>
+		</ul>
+	</div>
+</footer>
 
-	</body>
+</div>
 
-<!-- Mirrored from html5up.net/uploads/demos/phantom/elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 May 2016 02:28:37 GMT -->
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js'%}"></script>
+<script src="{% static 'assets/js/skel.min.js'%}"></script>
+<script src="{% static 'assets/js/util.js'%}"></script>
+
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="{% static 'assets/js/main.js'%}"></script>
+
+</body>
+
 </html>
